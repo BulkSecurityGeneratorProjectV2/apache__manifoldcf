@@ -19,6 +19,7 @@ package org.apache.manifoldcf.agents.transformation.opennlp;
 import java.io.*;
 
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -683,7 +684,7 @@ public class OpenNlpExtractor extends BaseTransformationConnector {
       OutputStream outputStream;
       try
       {
-        outputFile = File.createTempFile("mcftika","tmp");
+        outputFile = Files.createTempFile("mcftika","tmp").toFile();
         outputStream = new FileOutputStream(outputFile);
       }
       catch (IOException e)

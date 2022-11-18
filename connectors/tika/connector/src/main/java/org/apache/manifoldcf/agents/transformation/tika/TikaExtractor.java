@@ -23,6 +23,7 @@ import org.apache.manifoldcf.agents.interfaces.*;
 import org.apache.manifoldcf.agents.system.Logging;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.util.*;
 
 import org.apache.tika.exception.TikaException;
@@ -868,7 +869,7 @@ public class TikaExtractor extends org.apache.manifoldcf.agents.transformation.B
       OutputStream outputStream;
       try
       {
-        outputFile = File.createTempFile("mcftika","tmp");
+        outputFile = Files.createTempFile("mcftika","tmp").toFile();
         outputStream = new FileOutputStream(outputFile);
       }
       catch (IOException e)

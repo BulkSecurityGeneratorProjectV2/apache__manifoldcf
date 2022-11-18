@@ -20,6 +20,7 @@ package org.apache.manifoldcf.core.interfaces;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 
 import org.apache.manifoldcf.core.system.ManifoldCF;
 
@@ -139,7 +140,7 @@ public class TempFileCharacterInput extends CharacterInput
       File outfile;
       try
       {
-        outfile = File.createTempFile("_MC_","");
+        outfile = Files.createTempFile("_MC_","").toFile();
       }
       catch (IOException e)
       {

@@ -31,6 +31,7 @@ import org.apache.manifoldcf.core.util.URLDecoder;
 
 import java.io.*;
 import java.util.Date;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -1747,7 +1748,7 @@ public class SharePointRepository extends org.apache.manifoldcf.crawler.connecto
       try
       {
         // Read the document into a local temporary file, so I get a reliable length.
-        File tempFile = File.createTempFile("__shp__",".tmp");
+        File tempFile = Files.createTempFile("__shp__",".tmp").toFile();
         try
         {
           // Open the output stream

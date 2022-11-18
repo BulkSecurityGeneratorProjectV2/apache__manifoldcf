@@ -50,6 +50,7 @@ import org.apache.manifoldcf.agents.system.Logging;
 import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.nio.charset.StandardCharsets;
@@ -1127,7 +1128,7 @@ public class TikaExtractor extends org.apache.manifoldcf.agents.transformation.B
       File outputFile;
       OutputStream outputStream;
       try {
-        outputFile = File.createTempFile("mcftika", "tmp");
+        outputFile = Files.createTempFile("mcftika","tmp").toFile();
         outputStream = new FileOutputStream(outputFile);
       } catch (IOException e) {
         handleIOException(e);

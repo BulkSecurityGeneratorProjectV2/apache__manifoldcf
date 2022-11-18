@@ -37,6 +37,7 @@ import org.apache.http.HttpException;
 import java.io.*;
 import java.util.*;
 import java.net.*;
+import java.nio.file.Files;
 import java.text.*;
 import java.util.regex.*;
 
@@ -3610,7 +3611,7 @@ public class RSSConnector extends org.apache.manifoldcf.crawler.connectors.BaseR
           {
             try
             {
-              File tempFile = File.createTempFile("_rssdata_","tmp");
+              File tempFile = Files.createTempFile("_rssdata_","tmp").toFile();
               return new XMLFileParsingContext(theStream,namespace,localName,qName,atts,tempFile);
             }
             catch (java.net.SocketTimeoutException e)
@@ -3632,7 +3633,7 @@ public class RSSConnector extends org.apache.manifoldcf.crawler.connectors.BaseR
           {
             try
             {
-              File tempFile = File.createTempFile("_rssdata_","tmp");
+              File tempFile = Files.createTempFile("_rssdata_","tmp").toFile();
               return new XMLFileParsingContext(theStream,namespace,localName,qName,atts,tempFile);
             }
             catch (java.net.SocketTimeoutException e)
@@ -4065,7 +4066,7 @@ public class RSSConnector extends org.apache.manifoldcf.crawler.connectors.BaseR
           {
             try
             {
-              File tempFile = File.createTempFile("_rssdata_","tmp");
+              File tempFile = Files.createTempFile("_rssdata_","tmp").toFile();
               return new XMLFileParsingContext(theStream,namespace,localName,qName,atts,tempFile);
             }
             catch (java.net.SocketTimeoutException e)
@@ -4087,7 +4088,7 @@ public class RSSConnector extends org.apache.manifoldcf.crawler.connectors.BaseR
           {
             try
             {
-              File tempFile = File.createTempFile("_rssdata_","tmp");
+              File tempFile = Files.createTempFile("_rssdata_","tmp").toFile();
               return new XMLFileParsingContext(theStream,namespace,localName,qName,atts,tempFile);
             }
             catch (java.net.SocketTimeoutException e)
@@ -4486,7 +4487,7 @@ public class RSSConnector extends org.apache.manifoldcf.crawler.connectors.BaseR
           {
             try
             {
-              File tempFile = File.createTempFile("_rssdata_","tmp");
+              File tempFile = Files.createTempFile("_rssdata_","tmp").toFile();
               return new XMLFileParsingContext(theStream,namespace,localName,qName,atts,tempFile);
             }
             catch (java.net.SocketTimeoutException e)
@@ -4508,7 +4509,7 @@ public class RSSConnector extends org.apache.manifoldcf.crawler.connectors.BaseR
           {
             try
             {
-              File tempFile = File.createTempFile("_rssdata_","tmp");
+              File tempFile = Files.createTempFile("_rssdata_","tmp").toFile();
               return new XMLFileParsingContext(theStream,namespace,localName,qName,atts,tempFile);
             }
             catch (java.net.SocketTimeoutException e)

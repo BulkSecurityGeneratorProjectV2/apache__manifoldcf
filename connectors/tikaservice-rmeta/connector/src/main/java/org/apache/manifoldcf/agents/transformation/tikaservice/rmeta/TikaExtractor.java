@@ -38,6 +38,7 @@ import java.net.SocketTimeoutException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -1433,7 +1434,7 @@ public class TikaExtractor extends org.apache.manifoldcf.agents.transformation.B
       File outputFile;
       OutputStream outputStream;
       try {
-        outputFile = File.createTempFile("mcftika", "tmp");
+        outputFile = Files.createTempFile("mcftika","tmp").toFile();
         outputStream = new FileOutputStream(outputFile);
       } catch (final IOException e) {
         handleIOException(e);

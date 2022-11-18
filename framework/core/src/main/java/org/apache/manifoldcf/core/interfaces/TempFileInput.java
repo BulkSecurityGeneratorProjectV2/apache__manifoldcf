@@ -19,6 +19,8 @@
 package org.apache.manifoldcf.core.interfaces;
 
 import java.io.*;
+import java.nio.file.Files;
+
 import org.apache.manifoldcf.core.system.ManifoldCF;
 
 /** This class represents a temporary file data input
@@ -117,7 +119,7 @@ public class TempFileInput extends BinaryInput
       File outfile;
       try
       {
-        outfile = File.createTempFile("_MC_","");
+        outfile = Files.createTempFile("_MC_","").toFile();
       }
       catch (IOException e)
       {

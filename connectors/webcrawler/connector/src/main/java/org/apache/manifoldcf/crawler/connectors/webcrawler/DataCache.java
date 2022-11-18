@@ -23,6 +23,7 @@ import org.apache.manifoldcf.agents.interfaces.*;
 import org.apache.manifoldcf.crawler.interfaces.*;
 import org.apache.manifoldcf.crawler.system.Logging;
 import org.apache.manifoldcf.crawler.system.ManifoldCF;
+import java.nio.file.Files;
 import java.util.*;
 import java.io.*;
 
@@ -77,7 +78,7 @@ public class DataCache
         return null;
       try
       {
-        File tempFile = File.createTempFile("_webcache_","tmp");
+        File tempFile = Files.createTempFile("_webcache_","tmp").toFile();
         try
         {
           // Causes memory leaks if left around; there's no way to release

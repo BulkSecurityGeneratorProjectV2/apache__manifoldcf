@@ -79,6 +79,7 @@ import org.apache.http.ParseException;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.*;
 import java.io.*;
 
@@ -4623,7 +4624,7 @@ public class WikiConnector extends org.apache.manifoldcf.crawler.connectors.Base
         lastModified = atts.getValue("timestamp");
         try
         {
-          File tempFile = File.createTempFile("_wikidata_","tmp");
+          File tempFile = Files.createTempFile("_wikidata_","tmp").toFile();
           return new XMLFileContext(theStream,namespaceURI,localName,qName,atts,tempFile);
         }
         catch (java.net.SocketTimeoutException e)

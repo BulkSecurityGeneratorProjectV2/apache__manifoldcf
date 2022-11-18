@@ -23,6 +23,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.manifoldcf.agents.interfaces.*;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.util.*;
 
 public class ContentLimiter extends org.apache.manifoldcf.agents.transformation.BaseTransformationConnector {
@@ -386,7 +387,7 @@ public class ContentLimiter extends org.apache.manifoldcf.agents.transformation.
       OutputStream outputStream;
       try
       {
-        outputFile = File.createTempFile("mcftika","tmp");
+        outputFile = Files.createTempFile("mcftika","tmp").toFile();
         outputStream = new FileOutputStream(outputFile);
       }
       catch (IOException e)

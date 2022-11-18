@@ -55,6 +55,7 @@ import java.io.InterruptedIOException;
 import java.net.MalformedURLException;
 import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -904,7 +905,7 @@ public class SharedDriveConnector extends org.apache.manifoldcf.crawler.connecto
                       Logging.connectors.debug("JCIFS: Local file data needed for '"+documentIdentifier+"'");
 
                     // Create a temporary file, and use that for the check and then the ingest
-                    File tempFile = File.createTempFile("_sdc_",null);
+                    File tempFile = Files.createTempFile("_sdc_",null).toFile();
                     try
                     {
                       FileOutputStream os = new FileOutputStream(tempFile);
